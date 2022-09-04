@@ -9,7 +9,6 @@ import WellRemind from './Components/WellRemind'
 import Footer from './Components/Footer'
 import About from './Components/About'
 
-
 const App = () => {   //ShowAddTask is our bool to toggle our state of showing a task setShowAddTask is our fuction we can call to update it
   const[showAddTask, setShowAddTask] = useState(false) // tasks is our state value with setTasks function to update it 
   const[tasks,setTasks] = useState([])
