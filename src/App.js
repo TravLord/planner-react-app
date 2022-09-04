@@ -46,9 +46,10 @@ const addTask = async (task) => {
     },
     body:JSON.stringify(task),
   }) 
+
   const data = await res.json()  //result of json string data (new task added)
 
-  setTasks([...tasks,data])  //set existing tasks with new data recieved
+  setTasks([...tasks,data])  //set existing tasks array with new data recieved
 
   // const id = Math.floor(Math.random() * 1000) + 1  // this creates id with random number(NOT NEEDED WITH BACKEND AUTO ID CREATION)
   // const newTask = { id, ...task}  // new task is object with above id and copy whats passed in ... to the form to add
@@ -88,14 +89,12 @@ const data = await res.json()
   return (
      <Router>
    
-   <div className='h-96 rounded-lg'>
-     
-      <div className="flex bg-slate-100 m-h-full bg-zinc-900">
-      
-        <div className="container mx-auto bg-zinc-900 m-h-full rounded-lg">
-      
+   <div className='h-96 rounded-lg'> 
+      <div className="flex bg-slate-100 m-h-full bg-zinc-900">    
+        <div className="container mx-auto bg-zinc-900 m-h-full rounded-lg">     
         <div>
-          <img className="inline-flex h-12  mb-4 mt-1 pl-3"src={logo} alt="img"></img>    
+          <img className="inline-flex h-12  mb-4 mt-1 pl-3"src={logo} alt="img"></img> 
+             
           <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>  {/* onadd fires off setShowAddTask set to opposite of value of boolean addTask form is dependent on the toggle peice of state if showAddTask boolean true then show AddTask component (&& shorter if stmt) */}
             {showAddTask && <AddTask onAdd={addTask}/>}  {/* Adding addTask prop (func) to component this is called by onSubmit func event*/}
                                     
@@ -110,11 +109,11 @@ const data = await res.json()
       <Routes>
       <Route path='/about' element={<About/>}/>  {/*Bringing in about component through route path */}
       </Routes>
+
       <br></br>
       <br></br>
       
-      <Footer/> 
-      
+      <Footer/>      
         </div>
       </div>
     </div>

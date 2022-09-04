@@ -22,7 +22,7 @@ const Task = ({task, onDelete, onToggle}) => {
                 <div className='ml-2 mt-1 font-normal'>{task.day}</div>
         
                 </div>
-                <p className={`${task.reminder ? 'underline underline-offset-8 mt-3 text-cyan-200' : 'text-slate-400 '}`}onDoubleClick={() => onToggle(task.id)}>Reminder Set!</p>
+                {task.reminder ? <p className= 'underline underline-offset-8 mt-3 text-cyan-200'  onDoubleClick={() => onToggle(task.id)}> ** Reminder set **</p> : <small className='text-dark-400 text-light underline underline-offset-1' onDoubleClick={() => onToggle(task.id)}>dbl click task to set reminder</small>}
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div className="absolute top-0 right-0 mt-1 flex items-center space-x-1">
             <dt className="text-rose-500 text rounded-full hover:bg-slate-600 hover:font-bold hover:border-red-500">
